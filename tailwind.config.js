@@ -14,6 +14,7 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Kanit', ...defaultTheme.fontFamily.sans],
+                body: ['Bai Jamjuree', ...defaultTheme.fontFamily.sans],
             },
         },
     },

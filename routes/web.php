@@ -23,3 +23,11 @@ Route::post('login', [LoginController::class, 'login']);
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::get('set-locale/{locale}', [LanguageController::class, 'setLocale'])->name('setLocale');
+
+Route::get('lang/{locale}', function ($locale) {
+    if (! in_array($locale, ['en', 'th', 'zh'])) {
+        abort(400);
+    }
+    session(['locale' => $locale]);
+    return redirect()->back();
+});
